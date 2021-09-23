@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StaterkitController;
-use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\StaterkitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+/////////////////
 Route::get('access-roles', [RoleController::class, 'access_roles'])->name('app-access-roles');
 Route::get('access-permission', [AppsController::class, 'access_permission'])->name('app-access-permission');
+Route::get('anggota', [UserController::class, 'anggota']);
+Route::resource('user', UserController::class);
+
+Route::get('tes', function () {
+    return App\Models\User::role('sdm')->get();
+});

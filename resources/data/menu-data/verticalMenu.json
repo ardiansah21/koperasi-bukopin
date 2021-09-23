@@ -6,6 +6,18 @@
             "slug": "home"
         },
         {
+            "url": "user",
+            "name": "User",
+            "icon": "user",
+            "slug": "user"
+        },
+        {
+            "url": "anggota",
+            "name": "Anggota",
+            "icon": "users",
+            "slug": "anggota"
+        },
+        {
             "url": "access-roles",
             "name": "Roles",
             "icon": "shield",
